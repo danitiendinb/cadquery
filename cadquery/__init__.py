@@ -13,6 +13,10 @@ Basic usage::
 See also:
     - https://cadquery.readthedocs.io for full documentation
     - https://github.com/CadQuery/cadquery for the upstream project
+
+Personal fork notes:
+    - Tracking upstream v2.4.0
+    - Using this fork to experiment with custom selectors and assembly workflows
 """
 
 from .cq import (
