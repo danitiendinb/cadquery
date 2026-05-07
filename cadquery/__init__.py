@@ -9,6 +9,10 @@ Basic usage::
     import cadquery as cq
 
     result = cq.Workplane("XY").box(1, 2, 3)
+
+See also:
+    - https://cadquery.readthedocs.io for full documentation
+    - https://github.com/CadQuery/cadquery for the upstream project
 """
 
 from .cq import (
