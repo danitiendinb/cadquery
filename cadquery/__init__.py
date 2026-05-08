@@ -17,6 +17,7 @@ See also:
 Personal fork notes:
     - Tracking upstream v2.4.0
     - Using this fork to experiment with custom selectors and assembly workflows
+    - Added cq.box() and cq.sphere() convenience helpers at module level
 """
 
 from .cq import (
@@ -67,6 +68,20 @@ from . import importers
 
 __version__ = "2.4.0"
 
+
+# --- Personal convenience helpers ---
+# Quick shorthand functions so I don't have to type Workplane("XY") every time.
+
+def box(length, width, height):
+    """Shorthand for cq.Workplane('XY').box(length, width, height)."""
+    return Workplane("XY").box(length, width, height)
+
+
+def sphere(radius):
+    """Shorthand for cq.Workplane('XY').sphere(radius)."""
+    return Workplane("XY").sphere(radius)
+
+
 __all__ = [
     # Core workplane
     "CQContext",
@@ -110,4 +125,7 @@ __all__ = [
     # Modules
     "exporters",
     "importers",
+    # Personal helpers
+    "box",
+    "sphere",
 ]
