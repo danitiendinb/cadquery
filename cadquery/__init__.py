@@ -18,6 +18,7 @@ Personal fork notes:
     - Tracking upstream v2.4.0
     - Using this fork to experiment with custom selectors and assembly workflows
     - Added cq.box() and cq.sphere() convenience helpers at module level
+    - Added cq.cylinder() convenience helper
 """
 
 from .cq import (
@@ -82,6 +83,15 @@ def sphere(radius):
     return Workplane("XY").sphere(radius)
 
 
+def cylinder(radius, height, centered=True):
+    """Shorthand for cq.Workplane('XY').cylinder(height, radius).
+
+    Note: CadQuery's cylinder() takes height then radius, but I find
+    radius-first more intuitive, so this wrapper swaps the order.
+    """
+    return Workplane("XY").cylinder(height, radius, centered=centered)
+
+
 __all__ = [
     # Core workplane
     "CQContext",
@@ -128,4 +138,5 @@ __all__ = [
     # Personal helpers
     "box",
     "sphere",
+    "cylinder",
 ]
